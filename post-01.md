@@ -1,3 +1,13 @@
++++
+draft = false
+title = "Blog"
+description = "Blog site description."
+sort_by = "date"
+paginate_by = 5
+template = "blog.html"
+page_template = "blog_page.html"
++++
+
 # BYOGE, the tech I will use
 
 ![image](https://www.meme-arsenal.com/memes/39851438a88c2b66519fa39046dc746a.jpg)
@@ -9,13 +19,13 @@ This will be probably the easiest part. I did a lot of research on tech and usua
 - Coding: We will enable specifying scripts on objects but external editors would be preferred at first. I think having an integrated editor could be doable and viable in the long run.
 - External data: For loading models we will use assimp. It's the most fully feature model loader and we can just export simplified model data (vertex/indices/image filepaths). What about the animations you ask ? We can use ozz-animations for that and find a way to simplifie the end output. For audio, we will support wav's/ogg's and support exporting a simplified sequence mechanism using Audaspace.
 - UI: I will use Dear Imgui. 
-- Level editing tools: We will need to enable easy scene creation like Trenchbroom enables. The goal being to create models based on textures and CSG. Easy kitbashing abilities could also be used like [MAST](https://fertile-soil-productions.itch.io/mast). We also need a way for designers to be able to create instances, Skybox's and terrain like in Source2 Editor.
+- Level editing tools: We will need to enable easy scene creation like Trenchbroom enables. The goal being to create models based on textures and CSG. Easy kitbashing abilities could also be used like [MAST](https://fertile-soil-productions.itch.io/mast). We also need a way for designers to be able to create instances, 3D Skybox's and terrain like in Source2 Editor.
 
 Now, we need to identify which language and tooling we will use for programming the editor itself. There are a couple of solutions that I invision. The major issue in my case is that a few things are valued for the developpement environnement used. 
 
 - Ease of use: Use tools that enable debugging, that have linting, easy code writing/analyses and have fast iteration times
 - Freedom: We need to be able to develop cross-platform
-- Speed: I want my the editor to be fast.
+- Speed: the editor needs to be fast for users.
 
 ## Solution 1: Haxe/hashlink
 
@@ -28,6 +38,9 @@ Easily integrate C libraries with exemples. No debugging for now and in the near
 ## Solution 3: Beef / No VM
 Beef is a C# clone but is geared towards game developpers so it's an AOT compiled language that is built to create fast code because games gotta go fast. The developpement environnement is great with a debugger integrated but is Windows only. In the future, I will have a Linux only machine so this is kind of a hindrince but this issue could be anulled by the fact that I can run a Windows VM in the linux machine while using GPU passthrough.  Integrating Kinc will demande an upfront cost of time.
 
-If we consider everthing I've said, I think that the conclusion is that I would be better off using Beef. Speed is a major factor and having control over my memory is important. Having a language that's easy to use but hard to master makes the barrier to entry for participating developpers higher whislt still being somewhat manageable. Not witstanding the upfront initial cost of generating the API for Kinc in Beef, all in all I believe it would be a better long-term solution.
+## Solution 4: Luau
+Luau is a lua based language that's developped by the Roblox team sheppered by [zeux](https://zeux.io). As such, it's geared towards speed. It's a AOTish in the sense that the luau code is compiled to a bytecode representation to simplify optimization's in the runtime. As it's built around Lua C API integration into a native project is well documented. As the Roblox community has been emancipating from Roblox Studio interesting tooling has emerged in other code editors, most notably vscode. The only thing missing, is debugging. That will take some time to implement but we can base our work on a Lua based debugger that already exists LRDB. For history and more context on Luau, zeux talks more about it's aims and such in his [blog](https://zeux.io/2020/08/02/eight-years-at-roblox/) for the year 2019
+
+If we consider everthing I've said, I think that the conclusion is that I would be better off using Luau. Speed is a major factor and since luau is used for games in Roblox it should be fine for our usecase. Lua and by extension luau can freely share data between C and it's runtime, giving us control over our memory if need be. Having a language that's easy to use but hard to master makes the barrier to entry for participating developpers higher whislt still being somewhat manageable. Not witstanding the upfront initial cost of generating the API for all the libraries used by Luau for BYOGE, all in all I believe it would be a better long-term solution.
 
 There is a lot to do and little time.

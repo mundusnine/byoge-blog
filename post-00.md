@@ -1,7 +1,22 @@
-# Why Bring your own Game Engine ?
++++
+date = "2022-12-15T15:42:07"
+title = "Why Bring your own Game Engine ?"
+description = "Musings on finding the 'best' game engine."
+slug = "game-making-analysis"
+draft = false
+
+[taxonomies]
+    categories = ["news"]
+    tags = ["website"]
+
+[extra]
+    page_identifier = "blog-2022-game-making-tools-analysis"
++++
 
 ### TLDR:
-I searched for the best game engine, I almost found it, but instead found out that I need to build BYOGE, which isn't a game engine. What will be needed [is](#conclusion--what-are-we-left-with)
+I searched for the best game engine, I almost found it, but instead found out that I need to build BYOGE, which isn't a game engine. What will be needed [is](#conclusion)
+
+<!-- more -->
 
 ## The big search
 In my search for the best game engine, I have come to the conclusion that their is no such thing. Why ? Well it's quite simple, trying to use a swiss knife as your only tool to accomplish your basic surviving will work fine in most case's, but if your in antartica, the cold might hinder what your doing and a wooden tool would suffice.
@@ -20,13 +35,13 @@ These facts outlined, I would prefer doing something thats open from the start. 
 
 ## No Source ? What next ? Quake of Doom maybe ?
 
-In my search's, I stumbled upon other engine's that were greatly moddable. One of those was the early games from Id Tech. Those initial engine's source are available, modders are still making maps and creating new content for these engines. New engines are being built to support the data formats of those games and make raytraced Doom's or Quake's. Why ? Well some fully featured open source level editors and tooling have been developped for these games, which is really interesting in itself. The best tools developped that I had a look at was Trenchbroom. The format of the Quake and Doom game files are well documented and some FOSS libraries are available to parse/load these files. `"We found it, the holy grail !"` Sadly, no.
+In my searches, I stumbled upon other engine's that were greatly moddable. One of those was the early games from Id Tech. Those initial engine's source are available, modders are still making maps and creating new content for these engines. New engines are being built to support the data formats of those games and make raytraced Doom's or Quake's. Why ? Well some fully featured open source level editors and tooling have been developped for these games, which is really interesting in itself. The best tools developped that I had a look at was Trenchbroom. The format of the Quake and Doom game files are well documented and some FOSS libraries are available to parse/load these files. `"We found it, the holy grail !"` Sadly, no.
 
 Those tools are really great. The file formats are good but they don't reflect the needs of the games of today and tommorrow. They are a true testament though that if you design the format well, have good stable tooling and give creators good level design tools, they'll create until there's no tommorrow.
 
-## Conclusion / What are we left with ? 
+## Conclusion
 
-Ourselves, and one of use needs to make that thing that seems so perfect we can't touch. By the way, it will be a mess.
+What are we left with ? Ourselves, and one of use needs to make that thing that seems so perfect we can't touch. By the way, it will be a mess.
 
 In short, here's what I found out in my search for the best game engine:
 

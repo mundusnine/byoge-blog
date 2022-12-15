@@ -1,3 +1,13 @@
++++
+draft = true
+title = "Blog"
+description = "Blog site description."
+sort_by = "date"
+paginate_by = 5
+template = "blog.html"
+page_template = "blog_page.html"
++++
+
 The goal with BYOGE will be to make the most viable product.
 
 - Make a website
